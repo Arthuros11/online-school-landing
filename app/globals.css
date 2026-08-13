@@ -2,11 +2,32 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #18181b;
-  --brand-50: #eff6ff;
-  --brand-100: #dbeafe;
-  --brand-600: #2563eb;
-  --brand-700: #1d4ed8;
+  --foreground: #1a1a1a;
+
+  --brand-50: #fdf2f8;
+  --brand-100: #fce7f3;
+  --brand-200: #fbcfe8;
+  --brand-500: #ec4899;
+  --brand-600: #db2777;
+  --brand-700: #be185d;
+  --brand-800: #9d174d;
+
+  --surface-muted: #fff7ed;
+  --surface-cream: #fef3e2;
+
+  --secondary-800: #3d2314;
+  --secondary-900: #292524;
+
+  --text-secondary: #57534e;
+
+  --shadow-card: 0 4px 24px rgb(0 0 0 / 0.08);
+  --shadow-card-hover: 0 8px 32px rgb(0 0 0 / 0.12);
+  --shadow-button: 0 4px 14px rgb(219 39 119 / 0.35);
+
+  --radius-card: 1rem;
+  --radius-button: 9999px;
+
+  --font-display: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 @theme inline {
@@ -14,14 +35,64 @@
   --color-foreground: var(--foreground);
   --color-brand-50: var(--brand-50);
   --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-500: var(--brand-500);
   --color-brand-600: var(--brand-600);
   --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-cream: var(--surface-cream);
+  --color-secondary-800: var(--secondary-800);
+  --color-secondary-900: var(--secondary-900);
+  --color-text-secondary: var(--text-secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+  --shadow-button: var(--shadow-button);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+@layer components {
+  .ui-btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-gradient-to-r from-brand-600 to-brand-700 text-white shadow-button hover:from-brand-700 hover:to-brand-800 focus-visible:outline-brand-600;
+  }
+
+  .ui-btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-secondary-900 text-white hover:bg-secondary-800 focus-visible:outline-brand-600;
+  }
+
+  .ui-card {
+    @apply rounded-2xl border border-brand-100/70 bg-white p-5 shadow-card;
+  }
+
+  .ui-eyebrow {
+    @apply text-sm font-semibold uppercase tracking-widest text-brand-700;
+  }
+
+  .ui-display {
+    @apply font-display font-black tracking-tighter text-foreground;
+  }
+
+  .ui-body-lg {
+    @apply text-lg leading-8 text-text-secondary;
+  }
+
+  .ui-section-title {
+    @apply font-display text-center text-3xl font-black tracking-tighter text-foreground sm:text-4xl;
+  }
+
+  .ui-input {
+    @apply mt-2 block w-full rounded-xl border border-brand-100 bg-white px-4 py-3 text-foreground placeholder:text-text-secondary/60 focus-visible:border-brand-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-brand-600;
+  }
+
+  .ui-btn-primary-sm {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-gradient-to-r from-brand-600 to-brand-700 text-white shadow-button hover:from-brand-700 hover:to-brand-800 focus-visible:outline-brand-600;
+  }
 }
