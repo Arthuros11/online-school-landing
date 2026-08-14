@@ -19,31 +19,31 @@ export function HeroSection() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-20 top-16 h-72 w-72 rounded-full bg-brand-100/50 blur-3xl"
+        className="pointer-events-none absolute -left-24 top-10 h-80 w-80 rounded-full bg-brand-100/60 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-16 top-32 h-80 w-80 rounded-full bg-surface-cream/70 blur-3xl"
+        className="pointer-events-none absolute -right-20 top-24 h-96 w-96 rounded-full bg-surface-cream/80 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-1/2 h-48 w-[min(100%,720px)] -translate-x-1/2 rounded-full bg-brand-50/80 blur-2xl"
+        className="pointer-events-none absolute bottom-0 left-1/2 h-56 w-[min(120%,900px)] -translate-x-1/2 rounded-full bg-white/90 blur-2xl"
       />
 
-      <div className="relative mx-auto flex max-w-6xl flex-col px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="relative mx-auto flex max-w-6xl flex-col px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <Eyebrow className="order-1 text-center lg:text-left">{courseName}</Eyebrow>
 
         <DisplayHeading
           id="hero-heading"
           as="h1"
-          className="order-2 mx-auto mt-5 max-w-3xl text-center text-[clamp(1.625rem,5vw,2.25rem)] leading-tight sm:mt-6 lg:order-4 lg:mt-8 lg:max-w-4xl lg:text-[2.75rem]"
+          className="order-2 mx-auto mt-4 max-w-3xl text-center text-[clamp(1.625rem,5vw,2.25rem)] leading-tight sm:mt-5 lg:order-4 lg:mt-8 lg:max-w-4xl lg:text-[2.75rem]"
         >
           {hero.headline}
         </DisplayHeading>
 
-        <div className="order-3 mt-6 lg:order-2 lg:mt-8">
-          <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,560px)_minmax(0,1fr)] lg:gap-8">
-            <Card className="hidden self-center lg:block lg:max-w-xs lg:justify-self-end">
+        <div className="order-3 mt-4 sm:mt-6 lg:order-2 lg:mt-6">
+          <div className="grid items-end gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(320px,760px)_minmax(0,1fr)] lg:gap-6 xl:gap-10">
+            <Card className="hidden self-end lg:mb-[18%] lg:block lg:max-w-[240px] lg:justify-self-end xl:max-w-xs">
               <p className="text-sm font-semibold text-brand-700">
                 {heroHighlights[0].title}
               </p>
@@ -52,27 +52,28 @@ export function HeroSection() {
               </p>
             </Card>
 
-            <div className="relative mx-auto w-full max-w-[min(100%,560px)] lg:justify-self-center">
+            <div className="relative mx-auto flex w-full min-h-[360px] items-end justify-center sm:min-h-[440px] lg:min-h-[min(78vh,760px)] lg:justify-self-center">
               <p
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 bottom-[4%] z-0 select-none text-center font-display text-[clamp(2.75rem,11vw,5.75rem)] font-black uppercase leading-[0.85] tracking-tighter text-brand-200/95 sm:bottom-[6%] lg:bottom-[2%] lg:text-[5.5rem]"
+                className="pointer-events-none absolute inset-x-0 bottom-[0%] z-0 select-none px-1 text-center font-display text-[clamp(3rem,13vw,7.5rem)] font-black uppercase leading-[0.82] tracking-tighter text-brand-200 sm:bottom-[-1%] lg:bottom-[-4%] lg:text-[7.25rem] xl:text-[8.5rem]"
               >
                 {heroDisplayWord}
               </p>
 
-              <div className="relative z-10 mx-auto h-[clamp(300px,52vh,560px)] w-full max-w-[min(100%,480px)] sm:max-w-[520px] lg:max-w-none">
+              <div className="relative z-10 flex w-full justify-center overflow-visible [mask-image:linear-gradient(to_bottom,#000_0%,#000_84%,transparent_100%)]">
                 <Image
                   src="/images/author/author.png"
                   alt="Ляйсан Латыпова — автор курса Sweet buket school"
-                  fill
+                  width={960}
+                  height={1200}
                   priority
-                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 60vw, 560px"
-                  className="object-contain object-bottom"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 820px"
+                  className="block h-[clamp(360px,62vh,820px)] w-auto max-w-[min(118vw,820px)] object-contain object-bottom sm:h-[clamp(420px,66vh,860px)] lg:h-[min(76vh,860px)] lg:max-w-none lg:origin-bottom lg:scale-[1.06]"
                 />
               </div>
             </div>
 
-            <Card className="hidden self-center lg:block lg:max-w-xs lg:justify-self-start">
+            <Card className="hidden self-end lg:mb-[18%] lg:block lg:max-w-[240px] lg:justify-self-start xl:max-w-xs">
               <p className="text-sm font-semibold text-brand-700">
                 {heroHighlights[1].title}
               </p>
@@ -96,7 +97,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <p className="ui-body-lg order-5 mx-auto mt-8 max-w-2xl text-center lg:mt-6">
+        <p className="ui-body-lg order-5 mx-auto mt-6 max-w-2xl text-center sm:mt-8 lg:mt-4">
           {hero.subheadline}
         </p>
 
